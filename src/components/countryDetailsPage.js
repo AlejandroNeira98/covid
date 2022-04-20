@@ -1,10 +1,22 @@
-import React from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getCountry } from '../redux/CountryDetails/countryReducer';
 
 export default function CountryDetails() {
-  const { country } = useParams();
-  const countryData = useSelector((state) => state.selectedCountry, shallowEqual);
+  const dispatch = useDispatch();
+  const { id, name } = useParams();
+
+  useEffect(() => dispatch(getCountry(id, name)), []);
+
+  const {
+    dates, recovered, confirmed, hospitalized, deaths,
+  } = useSelector((state) => state.country, shallowEqual);
+
+  const handleDateChange = (start, end) => {
+    dispatch(getCountry(id, name, start, end));
+  };
+  console.log( dates, recovered, confirmed, hospitalized, deaths);
   return (
     <form>
       <label htmlFor="start">
