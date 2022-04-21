@@ -59,9 +59,9 @@ export default function CountryDetails() {
             onChange={handleStartDateChange}
             type="date"
             id="start"
-            value={dateStart && `${dateStart.yyyy}-${dateStart.mm}-${dateStart.dd}`}
+            value={dateStart ? `${dateStart.yyyy}-${dateStart.mm}-${dateStart.dd}` : '2020-01-23'}
             min="2020-01-23"
-            max={thisDay && `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}`}
+            max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
           />
         </label>
         <label htmlFor="end">
@@ -71,9 +71,9 @@ export default function CountryDetails() {
             onChange={handleEndDateChange}
             type="date"
             id="end"
-            value={dateEnd && `${dateEnd.yyyy}-${dateEnd.mm}-${dateEnd.dd}`}
+            value={dateEnd ? `${dateEnd.yyyy}-${dateEnd.mm}-${dateEnd.dd}` : '2020-01-23'}
             min="2020-01-23"
-            max={thisDay && `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}`}
+            max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
           />
         </label>
       </form>
