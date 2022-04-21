@@ -6,6 +6,7 @@ import {
   Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend,
 } from 'chart.js';
 import { getCountry } from '../redux/CountryDetails/countryReducer';
+import styles from './styles/countryDetailsPage.module.css';
 
 export default function CountryDetails() {
   const dispatch = useDispatch();
@@ -13,15 +14,7 @@ export default function CountryDetails() {
 
   useEffect(() => { dispatch(getCountry(id, name)); }, []);
 
-  Chart.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-  );
+  Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
   const {
     confirmed, deaths, dates, dateStart, dateEnd, thisDay,
@@ -55,24 +48,13 @@ export default function CountryDetails() {
     ],
   });
 
-  const lineOptions = () => ({
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: `${name}:`,
-      },
-    },
-  });
-
   return (
-    <div>
+    <div className={styles.page}>
       <form>
+        <h1>{name}</h1>
         <label htmlFor="start">
           Start date:
+          <br />
           <input
             onChange={handleStartDateChange}
             type="date"
@@ -84,6 +66,7 @@ export default function CountryDetails() {
         </label>
         <label htmlFor="end">
           End date:
+          <br />
           <input
             onChange={handleEndDateChange}
             type="date"
@@ -94,8 +77,8 @@ export default function CountryDetails() {
           />
         </label>
       </form>
-      <Line options={lineOptions()} data={data(dates, deaths, 'New Deaths', 0)} />
-      <Line options={lineOptions()} data={data(dates, confirmed, 'New Confirmed', 132)} />
+      <Line options={{ responsive: true }} data={data(dates, deaths, 'New Deaths', 0)} />
+      <Line options={{ responsive: true }} data={data(dates, confirmed, 'New Confirmed', 132)} />
     </div>
   );
 }

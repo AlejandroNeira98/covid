@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: double none double;
+  background-color: rgba(57, 211, 231, 0.279);
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  background-color: rgba(3, 100, 132, 0.549);
+  border-radius: 15px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: large;
+}

@@ -57,7 +57,7 @@ function today() {
 
 function aWeekAgo() {
   const today = new Date();
-  let aWeekAgo = new Date(today.getTime() - 20 * 24 * 60 * 60 * 1000);
+  let aWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
   const dd = String(aWeekAgo.getDate()).padStart(2, '0');
   const mm = String(aWeekAgo.getMonth() + 1).padStart(2, '0');
   const yyyy = aWeekAgo.getFullYear();

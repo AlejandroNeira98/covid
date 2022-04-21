@@ -1,28 +1,39 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './styles/countryCard.module.css';
 
 export default function countryCard(props) {
   return (
-    <div>
-      <div>{props.name}</div>
+    <div className={styles.container}>
       <div>
-        <div>Last 24h update</div>
+        <div className={styles.name}>{props.name}</div>
+        <div>Last 24h update:</div>
+      </div>
+      <div>
         <ul>
           <li>
-            Cases Confirmed:
-            {props.confirmed}
+            <span> Cases Confirmed:</span>
+            <span>{props.confirmed}</span>
           </li>
           <li>
-            New Recovered:
-            {props.recovered}
+            <span>New Recovered:</span>
+            <span>{props.recovered}</span>
           </li>
           <li>
-            New Deaths:
-            {props.deaths}
+            <span>New Deaths:</span>
+            <span>
+              {' '}
+              {props.deaths}
+              {' '}
+            </span>
           </li>
         </ul>
       </div>
-      <NavLink to={`/Country/${props.id}/${props.name}`}><button type="button">See more</button></NavLink>
+      <div className={styles.button}>
+        <NavLink to={`/Country/${props.id}/${props.name}`}>
+          <button type="button" className={styles.button}>See more</button>
+        </NavLink>
+      </div>
     </div>
   );
 }
