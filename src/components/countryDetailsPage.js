@@ -27,19 +27,30 @@ export default function CountryDetails() {
     confirmed, deaths, dates, dateStart, dateEnd, thisDay,
   } = useSelector((state) => state.country, shallowEqual);
 
-  const handleDateChange = (start, end) => {
-    dispatch(getCountry(id, name, start, end));
+  const handleStartDateChange = (event) => {
+    const start = event.target.value.split('-');
+    const yyyy = start[0];
+    const mm = start[1];
+    const dd = start[2];
+    dispatch(getCountry(id, name, { yyyy, mm, dd }, dateEnd));
   };
-  console.log( dateStart, dateEnd, thisDay);
 
-  const data = (x, y, category) => ({
+  const handleEndDateChange = (event) => {
+    const end = event.target.value.split('-');
+    const yyyy = end[0];
+    const mm = end[1];
+    const dd = end[2];
+    dispatch(getCountry(id, name, dateStart, { yyyy, mm, dd }));
+  };
+
+  const data = (x, y, category, b) => ({
     x,
     datasets: [
       {
         label: `${category}`,
         data: y,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: `rgb(255, 99, ${b})`,
+        backgroundColor: `rgba(255, 99, ${b}, 0.5)`,
       },
     ],
   });
@@ -63,34 +74,28 @@ export default function CountryDetails() {
         <label htmlFor="start">
           Start date:
           <input
+            onChange={handleStartDateChange}
             type="date"
             id="start"
             value={dateStart && `${dateStart.yyyy}-${dateStart.mm}-${dateStart.dd}`}
-            min="2018-01-01"
+            min="2020-01-23"
             max={thisDay && `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}`}
           />
         </label>
         <label htmlFor="end">
           End date:
           <input
+            onChange={handleEndDateChange}
             type="date"
             id="end"
             value={dateEnd && `${dateEnd.yyyy}-${dateEnd.mm}-${dateEnd.dd}`}
-            min="2018-01-01"
+            min="2020-01-23"
             max={thisDay && `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}`}
           />
         </label>
-
-        <label htmlFor="category">
-          Choose a category:
-          <select name="category" id="category">
-            <option value="confirmed">Confirmed</option>
-            <option value="deaths">Deaths</option>
-          </select>
-        </label>
       </form>
-      <Line options={lineOptions()} data={data(dates, deaths, 'New Deaths')} />
-      <Line options={lineOptions()} data={data(dates, confirmed, 'New Confirmed')} />
+      <Line options={lineOptions()} data={data(dates, deaths, 'New Deaths', 0)} />
+      <Line options={lineOptions()} data={data(dates, confirmed, 'New Confirmed', 132)} />
     </div>
   );
 }
