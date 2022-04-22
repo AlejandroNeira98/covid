@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Lato:wght@300&display=swap');
+
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-style: double none double;
+  border-style: double;
   background-color: rgb(67, 105, 178);
   min-width: 50%;
+  box-sizing: border-box;
 }
 
 .container > *,
 .container > * > * > * {
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 ul {
@@ -32,7 +34,12 @@ button {
   border-radius: 15px;
 }
 
+.button {
+  align-self: end;
+}
+
 .name {
   font-weight: 500;
   font-size: large;
+  font-family: 'Cabin', sans-serif;
 }
