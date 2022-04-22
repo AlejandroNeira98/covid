@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import {
   Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend,
@@ -83,6 +83,15 @@ export default function CountryDetails() {
   return (
     <div className={styles.page}>
       <form>
+        <div className={styles.button}>
+          <NavLink to="/">
+            <button type="button" className={styles.button}>
+              {' '}
+              {'<'}
+              {' '}
+            </button>
+          </NavLink>
+        </div>
         <h1>{name}</h1>
         <label htmlFor="start">
           Start date:

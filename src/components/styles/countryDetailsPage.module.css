@@ -9,9 +9,11 @@ form {
   flex-direction: column;
 }
 
-form > * {
-  margin-top: 10px;
-  margin-bottom: 5px;
+.button {
+  position: absolute;
+  left: 2px;
+  color: white;
+  border-color: white;
 }
 
 .page {
