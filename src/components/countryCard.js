@@ -22,9 +22,7 @@ export default function countryCard(props) {
           <li>
             <span>New Deaths:</span>
             <span>
-              {' '}
               {props.deaths}
-              {' '}
             </span>
           </li>
         </ul>

@@ -24,6 +24,10 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@JANP_19](https://twitter.com/JANP_19)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-neira-0b45b6226/)
 
+
+## Acknowledgments
+- Credit to [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) the author of the original design.
+
 ## Show your support
 
 Give a ⭐ if you like this project!
