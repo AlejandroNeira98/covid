@@ -1,4 +1,4 @@
-## Space Travelers' Hub
+## Covid-Stats
 
 > This is a React.js app that displays Covid-19 data organized per country. Al data is updated daily and comes from the narrativa.com APIs
 
