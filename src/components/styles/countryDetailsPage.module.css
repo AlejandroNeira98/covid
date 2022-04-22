@@ -14,5 +14,6 @@ form > * {
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
-  background-color: rgba(57, 211, 231, 0.279);
+  background-color: rgb(67, 106, 178);
+  color: rgb(255, 255, 255);
 }

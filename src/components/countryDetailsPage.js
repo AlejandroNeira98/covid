@@ -48,6 +48,38 @@ export default function CountryDetails() {
     ],
   });
 
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white',
+          font: {
+            size: 18,
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: 'white',
+        },
+        grid: {
+          color: 'white',
+        },
+      },
+      y: {
+        ticks: {
+          color: 'white',
+        },
+        grid: {
+          color: 'white',
+        },
+      },
+    },
+  };
+
   return (
     <div className={styles.page}>
       <form>
@@ -77,8 +109,8 @@ export default function CountryDetails() {
           />
         </label>
       </form>
-      <Line options={{ responsive: true }} data={data(dates, deaths, 'New Deaths', 0)} />
-      <Line options={{ responsive: true }} data={data(dates, confirmed, 'New Confirmed', 132)} />
+      <Line options={options} data={data(dates, deaths, 'New Deaths', 0)} />
+      <Line options={options} data={data(dates, confirmed, 'New Confirmed', 132)} />
     </div>
   );
 }

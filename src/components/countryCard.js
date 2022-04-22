@@ -7,7 +7,7 @@ export default function countryCard(props) {
     <div className={styles.container}>
       <div>
         <div className={styles.name}>{props.name}</div>
-        <div>Last 24h update:</div>
+        <div>Last 24h:</div>
       </div>
       <div>
         <ul>

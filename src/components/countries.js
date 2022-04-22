@@ -7,7 +7,7 @@ export default function Countries() {
   const countriesList = Object.entries(countries);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {countriesList.map((country) => (
         <CountryCard
           name={country[0]}
