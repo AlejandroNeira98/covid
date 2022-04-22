@@ -6,7 +6,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import CountryCard from '../countryCard';
 import store from '../../redux/configureStore';
 
-it('it works', () => {
+it('works', () => {
   const tree = render(
     <Provider store={store}>
       <Router>

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import Countries from '../Countries';
 import store from '../../redux/configureStore';
 
-it('it works', () => {
+it('works', () => {
   const tree = render(
     <Provider store={store}>
       <Countries />
