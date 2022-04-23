@@ -17,9 +17,13 @@ export default function countryCard(props) {
         <div className={styles.name}>{props.name}</div>
       </div>
       <div>
-        24h confirmed cases: 
+        24h confirmed cases:
       </div>
-      <div> {props.confirmed} </div>
+      <div>
+        {' '}
+        {props.confirmed}
+        {' '}
+      </div>
     </div>
   );
 }
