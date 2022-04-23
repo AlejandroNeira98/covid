@@ -8,39 +8,6 @@ Object {
       <div
         class="container"
       >
-        <div>
-          <div
-            class="name"
-          />
-          <div>
-            Last 24h:
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <span>
-                 Cases Confirmed:
-              </span>
-              <span />
-            </li>
-            <li>
-              <span>
-                New Recovered:
-              </span>
-              <span />
-            </li>
-            <li>
-              <span>
-                New Deaths:
-              </span>
-              <span>
-                 
-                 
-              </span>
-            </li>
-          </ul>
-        </div>
         <div
           class="button"
         >
@@ -52,9 +19,27 @@ Object {
               class="button"
               type="button"
             >
-              See more
+              &gt;
             </button>
           </a>
+        </div>
+        <div>
+          <img
+            alt="flag"
+            src="https://countryflagsapi.com/png/undefined"
+          />
+        </div>
+        <div>
+          <div
+            class="name"
+          />
+        </div>
+        <div>
+          24h confirmed cases:
+        </div>
+        <div>
+           
+           
         </div>
       </div>
     </div>
@@ -63,39 +48,6 @@ Object {
     <div
       class="container"
     >
-      <div>
-        <div
-          class="name"
-        />
-        <div>
-          Last 24h:
-        </div>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <span>
-               Cases Confirmed:
-            </span>
-            <span />
-          </li>
-          <li>
-            <span>
-              New Recovered:
-            </span>
-            <span />
-          </li>
-          <li>
-            <span>
-              New Deaths:
-            </span>
-            <span>
-               
-               
-            </span>
-          </li>
-        </ul>
-      </div>
       <div
         class="button"
       >
@@ -107,9 +59,27 @@ Object {
             class="button"
             type="button"
           >
-            See more
+            &gt;
           </button>
         </a>
+      </div>
+      <div>
+        <img
+          alt="flag"
+          src="https://countryflagsapi.com/png/undefined"
+        />
+      </div>
+      <div>
+        <div
+          class="name"
+        />
+      </div>
+      <div>
+        24h confirmed cases:
+      </div>
+      <div>
+         
+         
       </div>
     </div>
   </div>,

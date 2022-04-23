@@ -13,9 +13,10 @@ export default function countriesReducer(state = {}, action) {
 
 export function getCountries() {
   let today = new Date();
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const yyyy = today.getFullYear();
+  const aDayAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const dd = String(aDayAgo.getDate()).padStart(2, '0');
+  const mm = String(aDayAgo.getMonth() + 1).padStart(2, '0');
+  const yyyy = aDayAgo.getFullYear();
   today = `${yyyy}-${mm}-${dd}`;
 
   return async (dispatch) => {

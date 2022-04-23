@@ -25,5 +25,5 @@ it('renders correctly', () => {
       </Router>
     </Provider>,
   );
-  expect(screen.getByText(/Cases Confirmed:/)).toBeInTheDocument();
+  expect(screen.getByText(/confirmed/)).toBeInTheDocument();
 });

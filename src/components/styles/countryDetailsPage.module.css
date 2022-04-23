@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
-h1 {
+.name {
+  font-weight: 500;
+  font-size: larger;
   font-family: 'Cabin', sans-serif;
+  margin: auto;
 }
 
 form {
@@ -9,9 +12,15 @@ form {
   flex-direction: column;
 }
 
+.header {
+  color: white;
+  border-color: white;
+  display: flex;
+}
+
 .button {
   position: absolute;
-  left: 2px;
+  left: 0;
   color: white;
   border-color: white;
 }
@@ -24,4 +33,13 @@ form {
   min-height: 100vh;
   background-color: rgb(67, 106, 178);
   color: rgb(255, 255, 255);
+}
+
+.img {
+  max-width: 50%;
+}
+
+.flagInputContainer {
+  display: flex;
+  justify-content: space-around
 }

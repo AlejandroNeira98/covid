@@ -82,41 +82,45 @@ export default function CountryDetails() {
 
   return (
     <div className={styles.page}>
-      <form>
-        <div className={styles.button}>
-          <NavLink to="/">
-            <button type="button" className={styles.button}>
-              {'<'}
-            </button>
-          </NavLink>
+      <div className={styles.header}>
+        <NavLink to="/">
+          <button type="button" className={styles.button}>
+            {'<'}
+          </button>
+        </NavLink>
+        <p className={styles.name}>{name}</p>
+      </div>
+      <div>
+        <div className={styles.flagInputContainer}>
+          <img className={styles.img} src={`https://countryflagsapi.com/png/${id}`} alt="flag" />
+          <form>
+            <label htmlFor="start">
+              Start date:
+              <br />
+              <input
+                onChange={handleStartDateChange}
+                type="date"
+                id="start"
+                value={dateStart ? `${dateStart.yyyy}-${dateStart.mm}-${dateStart.dd}` : '2020-01-23'}
+                min="2020-01-23"
+                max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
+              />
+            </label>
+            <label htmlFor="end">
+              End date:
+              <br />
+              <input
+                onChange={handleEndDateChange}
+                type="date"
+                id="end"
+                value={dateEnd ? `${dateEnd.yyyy}-${dateEnd.mm}-${dateEnd.dd}` : '2020-01-23'}
+                min="2020-01-23"
+                max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
+              />
+            </label>
+          </form>
         </div>
-        <h1>{name}</h1>
-        <img src={`https://countryflagsapi.com/png/${id}`} alt="flag" />
-        <label htmlFor="start">
-          Start date:
-          <br />
-          <input
-            onChange={handleStartDateChange}
-            type="date"
-            id="start"
-            value={dateStart ? `${dateStart.yyyy}-${dateStart.mm}-${dateStart.dd}` : '2020-01-23'}
-            min="2020-01-23"
-            max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
-          />
-        </label>
-        <label htmlFor="end">
-          End date:
-          <br />
-          <input
-            onChange={handleEndDateChange}
-            type="date"
-            id="end"
-            value={dateEnd ? `${dateEnd.yyyy}-${dateEnd.mm}-${dateEnd.dd}` : '2020-01-23'}
-            min="2020-01-23"
-            max={thisDay ? `${thisDay.yyyy}-${thisDay.mm}-${thisDay.dd}` : '2020-01-23'}
-          />
-        </label>
-      </form>
+      </div>
       <Line options={options} data={data(dates, deaths, 'New Deaths', 0)} />
       <Line options={options} data={data(dates, confirmed, 'New Confirmed', 132)} />
     </div>

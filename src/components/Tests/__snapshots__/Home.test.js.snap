@@ -7,6 +7,41 @@ Object {
     <div>
       <div>
         <div
+          class="header"
+        >
+          <div
+            class="img"
+          >
+            <img
+              alt="World Flags"
+              src="worldFlags.jpg"
+            />
+          </div>
+          <div
+            class="totalCases"
+          >
+            <p
+              class="title"
+            >
+              World's Total New Cases: 
+            </p>
+            <p
+              class="total"
+            >
+              0
+            </p>
+          </div>
+        </div>
+        <div
+          class="input"
+        >
+          <input
+            placeholder="Search"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
           style="display: flex; flex-wrap: wrap;"
         />
       </div>
@@ -14,6 +49,41 @@ Object {
   </body>,
   "container": <div>
     <div>
+      <div
+        class="header"
+      >
+        <div
+          class="img"
+        >
+          <img
+            alt="World Flags"
+            src="worldFlags.jpg"
+          />
+        </div>
+        <div
+          class="totalCases"
+        >
+          <p
+            class="title"
+          >
+            World's Total New Cases: 
+          </p>
+          <p
+            class="total"
+          >
+            0
+          </p>
+        </div>
+      </div>
+      <div
+        class="input"
+      >
+        <input
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </div>
       <div
         style="display: flex; flex-wrap: wrap;"
       />

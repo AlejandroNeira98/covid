@@ -47,13 +47,12 @@ export default function countryReducer(state = {}, action) {
 }
 
 function today() {
-  const today = new Date();
-  let yesterday = new Date(today.getTime() - 1 * 24 * 60 * 60 * 1000);
-  const dd = String(yesterday.getDate()).padStart(2, '0');
-  const mm = String(yesterday.getMonth() + 1).padStart(2, '0');
-  const yyyy = yesterday.getFullYear();
-  yesterday = { yyyy, mm, dd };
-  return yesterday;
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  today = { yyyy, mm, dd };
+  return today;
 }
 
 function aWeekAgo() {
