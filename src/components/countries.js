@@ -16,13 +16,9 @@ export default function Countries() {
         <input type="text" onChange={handleSearch} value={searchValue} placeholder="Search" />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {countriesList.filter((country) => {
-          if (searchValue === '') {
-            return country;
-          } if (country[0].toLowerCase().includes(searchValue.toLowerCase())) {
-            return country;
-          }
-        }).map((country) => (
+        {countriesList.filter((country) => (
+          country[0].toLowerCase().includes(searchValue.toLowerCase())
+        )).map((country) => (
           <CountryCard
             name={country[0]}
             deaths={country[1].today_new_deaths}
