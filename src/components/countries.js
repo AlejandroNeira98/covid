@@ -9,6 +9,7 @@ export default function Countries() {
   const countriesList = Object.entries(countries);
   const [searchValue, setSearchValue] = useState('');
   let totalCases = 0;
+  let count = 0;
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
@@ -33,16 +34,20 @@ export default function Countries() {
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {countriesList.filter((country) => (
           country[0].toLowerCase().includes(searchValue.toLowerCase())
-        )).map((country) => (
-          <CountryCard
-            name={country[0]}
-            deaths={country[1].today_new_deaths}
-            recovered={country[1].today_new_recovered}
-            confirmed={country[1].today_new_confirmed}
-            key={country[1].id}
-            id={country[1].id}
-          />
-        ))}
+        )).map((country) => {
+          count += 1;
+          return (
+            <CountryCard
+              name={country[0]}
+              deaths={country[1].today_new_deaths}
+              recovered={country[1].today_new_recovered}
+              confirmed={country[1].today_new_confirmed}
+              key={country[1].id}
+              id={country[1].id}
+              count={count}
+            />
+          );
+        })}
       </div>
     </>
   );

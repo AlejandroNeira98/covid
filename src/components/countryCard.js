@@ -4,7 +4,7 @@ import styles from './styles/countryCard.module.css';
 
 export default function countryCard(props) {
   return (
-    <div className={styles.container}>
+    <div className={Math.floor(props.count / 2) % 2 === 0 ? styles.container : styles.containerOdd}>
       <div className={styles.button}>
         <NavLink to={`/Country/${props.id}/${props.name}`}>
           <button type="button" className={styles.button}>{'>'}</button>

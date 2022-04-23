@@ -11,9 +11,22 @@
   align-items: self-end;
   padding: 3px;
 }
+.containerOdd {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background-color: rgba(45, 73, 125, 0.488);
+  min-width: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+  align-items: self-end;
+  padding: 3px;
+}
 
 .container > *,
-.container > * > * > * {
+.container > * > * > *,
+.containerOdd > *,
+.containerOdd > * > * > *  {
   color: white;
   font-family: 'Lato', sans-serif;
 }
