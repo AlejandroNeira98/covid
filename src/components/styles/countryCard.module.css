@@ -11,6 +11,7 @@
   align-items: self-end;
   padding: 3px;
 }
+
 .containerOdd {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@
 .container > *,
 .container > * > * > *,
 .containerOdd > *,
-.containerOdd > * > * > *  {
+.containerOdd > * > * > * {
   color: white;
   font-family: 'Lato', sans-serif;
 }
