@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Lato:wght@300&display=swap');
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin: 3px;
+}
+
+.header {
+  display: flex;
+}
+
+.totalCases {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.totalCases > * {
+  margin-left: 5%;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  font-weight: 500;
+  font-size: large;
+  font-family: 'Cabin', sans-serif;
+}
+
+.total {
+  font-family: 'Lato', sans-serif;
+}
