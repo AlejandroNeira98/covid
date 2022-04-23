@@ -86,13 +86,12 @@ export default function CountryDetails() {
         <div className={styles.button}>
           <NavLink to="/">
             <button type="button" className={styles.button}>
-              {' '}
               {'<'}
-              {' '}
             </button>
           </NavLink>
         </div>
         <h1>{name}</h1>
+        <img src={`https://countryflagsapi.com/png/${id}`} alt="flag" />
         <label htmlFor="start">
           Start date:
           <br />
